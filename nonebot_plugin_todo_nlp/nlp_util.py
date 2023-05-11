@@ -63,10 +63,10 @@ def get_name_from_text(text: str) -> (Union[str, None], bool, str):
                     if w in kw:
                         kw.remove(w)
             # 不论是否在句中出现，都只取去后面的部分
-            if first_v == "去":
-                pattern1 = f"{first_v}(.*?{kw[-1]})"
+            if second_v == "去":
+                pattern1 = f"{second_v}(.*?{kw[-1]})"
             else:
-                pattern1 = f"{first_v}.*?{kw[-1]}"
+                pattern1 = f"{second_v}.*?{kw[-1]}"
             # 分情况处理
             if len(keyphrases) == 1:
                 pattern2 = f"{keyphrases[0]}"
